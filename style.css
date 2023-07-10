@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Jomhuria&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+
+:root{
+    --gb-color: #303543;
+    --descr-gb-color: rgba(91, 98, 47, 0.521);
+    --sub-gb-color:#fff;
+    --title-color:#fff;
+    --animate-color:rgb(252, 204, 14);
+    --title-font:'Jomhuria', cursive;
+    --descr-font: 'Inika', serif;
+}
+body{
+    background-color:var(--gb-color)
+}
+.section-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+.section-title {
+    padding-top: 60px;
+    text-align: center;
+    font-size: 100px;
+    color: var(--title-color);
+    margin-bottom: 15px;
+}
+.section__tabs-container {
+    display: grid;
+    /* grid-template-columns: 817px 390px; */
+    grid-template-columns: 3fr 1fr;
+    gap: 24px;
+    
+}
+.tab__content {
+    position: relative;
+    max-width: 100% ;
+}
+.tab__content img{
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    
+}
+.tab-content__descr {
+    position: absolute;
+    right: 50px;
+    bottom: -160px;
+    font-size: 16px;
+    font-family: var(--descr-font);
+    background-color: var(--descr-gb-color);
+    text-align: center;
+    color:var(--title-color);
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 533px;
+
+}
+.tabs__subtitles {
+    background-color:var(--sub-gb-color);
+    border-radius: 10px;
+
+}
+.tabs__subtitle-items{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px 0;
+}
+.tab__subtitle {
+    font-family: var(--descr-font);
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.tab__subtitle:hover{
+    color:var(--animate-color);
+}
+.tab__subtitle_active {
+    letter-spacing: 3px;
+    text-shadow: var(--animate-color) 2px 0 13px;
+}
+.show{
+    display:block
+}
+.hide{
+    display:none
+}
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade{
+    from{opacity: 0.1;}
+    to{opacity: 1;}
+}
+
+@media screen and (max-width: 1150px) {
+    .section-title {
+        padding-top: 30px;
+        text-align: center;
+        font-size: 50px;
+        color: var(--title-color);
+        margin-bottom: 15px;
+    }
+  }
+  @media screen and (max-width: 850px) {
+    .tab-content__descr {
+        position: absolute;
+        right: 0px;
+        left: 0;
+        bottom: -260px;
+        max-width: 100%;
+    }
+    .tab__subtitle {
+        font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 755px) {
+    .section__tabs-container {
+        grid-template-columns: 1fr;
+    }
+    .tab-content__descr {
+        bottom: -170px;
+    }
+    .tabs__subtitles{
+        order: 0;
+    }
+    .tab__content{
+        order: 1;
+    }
+  }
+  @media screen and (max-width: 755px) {
+    .section__tabs-container {
+        grid-template-columns: 1fr;
+    }
+    .tab-content__descr {
+        bottom: -170px; 
+    }
+    .tabs__subtitles{
+        order: 0;
+    }
+    .tab__content{
+        order: 1;
+    
+    }
+  }
+  @media screen and (max-width: 550px) {
+    .section-title{
+        font-size: 30px;
+    }
+    .tab-content__descr {
+        bottom: -240px; 
+    }
+    
+  }
+
+  @media screen and (max-width: 440px) {
+    .section-title{
+        font-size: 30px;
+    }
+    .tab-content__descr {
+        bottom: -330px; 
+    }
+    
+  }
+
+  @media screen and (max-width: 380px) {
+    .section-title{
+        font-size: 25px;
+    }
+    .tab-content__descr {
+        bottom: -380px; 
+    }
+    
+  }
+
+  @media screen and (max-width: 340px) {
+    .tab-content__descr {
+        bottom: -430px; 
+    }
+    
+  }
